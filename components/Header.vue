@@ -1,148 +1,38 @@
-<template>
-  <header>
-    <div class="section wf-section">
-      <div class="website-container w-container">
-        <div class="columns-3 w-row">
-          <div class="w-col w-col-8">
-            <div class="logo-container">
-              <img
-                src="https://uploads-ssl.webflow.com/616d17f88acab6507439a0d2/6173d9ac2ea50e62cf676dba_logo.png"
-                loading="lazy"
-                height="81"
-                alt="NFT+ Studio Logo"
-              />
-            </div>
-          </div>
-          <div class="column w-col w-col-4">
-            <ul role="list" class="main-menu-container w-list-unstyled">
-              <li class="main-menu-item">
-                <a href="#our-services" class="main-menu-item-link">Services</a>
-              </li>
-              <li class="main-menu-item">
-                <a href="#roadmap" class="main-menu-item-link">Roadmap</a>
-              </li>
-              <li class="main-menu-item">
-                <a href="#faq" class="main-menu-item-link">FAQ</a>
-              </li>
-            </ul>
-            <div class="div-block">
-              <a
-                href="https://app.nftplus.studio"
-                target="_blank"
-                class="primary-button w-button"
-                >Open App</a
-              >
-            </div>
+<template> 
+    <nav id="main-nav">  
+        <div class="w-col w-col-8">
+          <div class="logo-container">
+            <img
+              src="https://uploads-ssl.webflow.com/616d17f88acab6507439a0d2/6173d9ac2ea50e62cf676dba_logo.png"
+              loading="lazy"
+              height="81"
+              alt="NFT+ Studio Logo"
+            />
           </div>
         </div>
-      </div>
-      <div class="main-hero-container w-container">
-        <div class="div-block-2"></div>
-        <div class="div-block-3">
-          <h1 class="hero-title">
-            <span class="main-title-highlight">No Code</span> NFT Tools
-          </h1>
-          <p class="hero-subtitle">
-            A full-fledge studio to generate, customize and deploy NFTs
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section-2 wf-section">
-      <div class="section-container website-container w-container">
-        <h2 class="section-header-title">
-          Built for everyone to join the revolution of Digital Assets <br />
-          stored in multiple decentralized networks
-        </h2>
-        <p class="site-description">
-          NFT+ Studio was made to make it simple for anyone to work with NFT
-          (Non-Fungible Tokens) without knowledge about coding or finding a
-          developer.
-        </p>
-        <a
-          href="https://app.nftplus.studio"
-          target="_blank"
-          class="primary-button early-access-btn w-button"
-          >Open App</a
-        >
-      </div>
-    </div>
-    <!-- <div class="video wf-section">
-      <div class="section-container website-container w-container">
-        <div
-          style="padding-top:56.17021276595745%"
-          class="w-embed-youtubevideo"
-        >
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/TNK-yRJ4-PI?rel=0&amp;controls=1&amp;autoplay=0&amp;mute=1&amp;start=0"
-            frameBorder="0"
-            style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto"
-            allow="autoplay; encrypted-media"
-            allowfullscreen=""
-          ></iframe>
-        </div>
-      </div>
-    </div> -->
-    <div id="our-services" class="our-service-section wf-section">
-      <div class="section-container website-container w-container">
-        <h2 class="section-header-title">Our Services</h2>
-        <div class="columns-2 w-row">
-          <div class="w-col w-col-6">
-            <div class="content-card">
-              <div class="w-row">
-                <div class="column-2 w-col w-col-3">
-                  <div class="our-service-icon-container">
-                    <img
-                      src="https://uploads-ssl.webflow.com/616d17f88acab6507439a0d2/616e8c8b84fc4ff489dc7e23_arts.svg"
-                      loading="lazy"
-                      width="62"
-                      alt="Arts Icon"
-                      class="our-service-icon"
-                    />
-                  </div>
-                </div>
-                <div class="w-col w-col-9">
-                  <div class="our-service-title-text">Generative Art</div>
-                  <p class="our-service-description">
-                    Import a folder with assets or create your own layers.
-                    Configure traits, rarities, background palettes and more.
-                    Generate up to 50,000 unique images with a click of a
-                    button. <span class="italic-bold">No coding required!</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="w-col w-col-6">
-            <div class="content-card w-row">
-              <div class="column-3 w-col w-col-3">
-                <div class="our-service-icon-container contract-icon-container">
-                  <img
-                    src="https://uploads-ssl.webflow.com/616d17f88acab6507439a0d2/616e8f26b295545266c00db4_contract.svg"
-                    loading="lazy"
-                    width="60"
-                    alt="Smart Contract Icon"
-                    class="our-service-icon"
-                  />
-                </div>
-              </div>
-              <div class="w-col w-col-9">
-                <div class="our-service-title-text">Custom Smart Contracts</div>
-                <p class="our-service-description">
-                  Create custom smart contracts for your NFT collection,
-                  <span class="italic-bold"
-                    >with no coding skills required.</span
-                  >
-                  We support Ethereum, Solana, and Binance Chain. It’s as easy
-                  as filling in a form and clicking the deploy button.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="roadmap" class="roadmap-section wf-section">
+        <div class="nav-container">
+          <ul role="list" class="nav-list">
+            <li class="main-menu-item">
+              <a href="#our-services" class="main-menu-item-link">Services</a>
+            </li>
+            <li class="main-menu-item">
+              <a href="#roadmap" class="main-menu-item-link">Roadmap</a>
+            </li>
+            <li class="main-menu-item">
+              <a href="#faq" class="main-menu-item-link">FAQ</a>
+            </li>
+          </ul>
+          <div class="div-block">
+            <a
+              href="https://app.nftplus.studio"
+              target="_blank"
+              class="primary-btn"
+              >Open App</a
+            >
+          </div> 
+      </div> 
+    </nav>
+    <!-- <div id="roadmap" class="roadmap-section wf-section">
       <div class="website-container section-container w-container">
         <h2 class="section-header-title">The Roadmap</h2>
         <div class="div-block-4"></div>
@@ -225,9 +115,60 @@
           </div>
         </div>
       </div>
-    </div>
-  </header>
+    </div> --> 
 </template>
+<style scoped>
+  #main-nav {
+    height: 570px;
+    background-image: url("https://cdn5.vectorstock.com/i/1000x1000/53/74/mountain-landscape-in-flat-style-design-element-vector-22325374.jpg");
+    background-position: 0 0;
+    background-size: cover;
+}
+
+#main-nav .primary-btn {
+  display: block;
+  width: max-content;
+  height: 50px;
+  padding: 0.6em 1em;
+  border-radius: 7px;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#ff00a1),color-stop(84%,#ff114f));
+  background-image: linear-gradient(180deg,#ff00a1,#ff114f 84%);
+  font-family: 'Titillium Web',sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#main-nav {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  padding: 1em 4em;
+}
+
+#main-nav .nav-container { 
+  display: flex;
+  gap: 5em;
+  justify-content: end;
+  height: max-content;
+}
+
+#main-nav .nav-list {
+  display: flex;
+  gap: 1.2em;
+  justify-content: center;
+  margin: auto 0;
+  font-weight: bolder;
+  transition: all 1s;
+}
+#main-nav .nav-list li {
+  color: #bcabfe;
+  transition: color 0.6s;
+}
+
+#main-nav .nav-list li:hover {
+  color: #ff00a1;
+  transition: color 0.6s;
+}
+</style>
 <script> 
 
 export default {
