@@ -59,8 +59,7 @@
 </template>
 <style>
 footer {
-  padding-top: 60px;
-  padding-bottom: 40px;
+  padding: 70px 4.5em 40px 4.5em; 
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
