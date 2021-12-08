@@ -1,32 +1,34 @@
 {
-  "name": "nuxt-markdown-blog-starter",
+  "name": "nuxt-basic-blog",
   "version": "1.0.0",
-  "author": "marinaaisa <marina@marinaaisa.com>",
   "private": true,
-  "engines": {
-    "node": ">=8.0.0",
-    "npm": ">=5.0.0"
-  },
-  "dependencies": {
-    "@nuxtjs/style-resources": "^1.0.0",
-    "markdown-it": "^10.0.0",
-    "markdown-it-prism": "^2.0.3",
-    "normalize.css": "^8.0.1",
-    "nuxt": "^2.11.0",
-    "nuxt-i18n": "^6.4.1",
-    "nuxt-webfontloader": "^1.1.0",
-    "vue-lazyload": "^1.3.3"
-  },
   "scripts": {
     "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
     "generate": "nuxt generate",
-    "analyze": "nuxt build --analyze"
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "npm run lint:js"
+  },
+  "dependencies": {
+    "@nuxt/content": "^1.9.0",
+    "@nuxtjs/feed": "^2.0.0",
+    "@nuxtjs/sitemap": "^2.4.0",
+    "@tailwindcss/typography": "^0.2.0",
+    "@tailwindcss/ui": "^0.5.0",
+    "nuxt": "^2.14.5",
+    "prism-themes": "^1.4.0",
+    "core-js": "^3.6.5"
   },
   "devDependencies": {
-    "frontmatter-markdown-loader": "^3.1.0",
-    "node-sass": "^4.13.0",
-    "responsive-loader": "^1.2.0",
-    "sass-loader": "^8.0.0",
-    "sharp": "^0.23.4"
+    "@nuxtjs/eslint-config": "^3.1.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
+    "@nuxtjs/tailwindcss": "^3.0.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-nuxt": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.1"
   }
 }

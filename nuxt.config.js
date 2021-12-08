@@ -1,148 +1,136 @@
-const builtAt = new Date().toISOString()
-const path = require('path')
-const { I18N } = require('./locales/i18n-nuxt-config')
-import fs from 'fs'
-import Mode from "frontmatter-markdown-loader/mode"
-import MarkdownIt from 'markdown-it'
-import mip from 'markdown-it-prism'
+import global from './utils/global';
+import getRoutes from './utils/getRoutes';
+import getSiteMeta from './utils/getSiteMeta';
 
-function getPaths (lang, type) {
-  let initial = lang
-  if (lang === 'en') { initial = '' }
-  return fs.readdirSync(path.resolve(__dirname, 'contents', `${lang}/${type}`))
-    .filter(filename => path.extname(filename) === '.md')
-    .map(filename => `${initial}/${type}/${path.parse(filename).name}`)
-}
+const meta = getSiteMeta();
 
-const md = new MarkdownIt({
-  html: true,
-  typographer: true
-})
-md.use(mip)
+export default {
+  // Target (https://go.nuxtjs.dev/config-target)
+  target: 'static',
 
-const productionUrl = {
-  en: "/en",
-  es: "/es"
-};
-const baseUrl = 'https://marinaaisa.com';
-
-module.exports = {
-  env: {
-    baseUrl,
-    productionUrl
-  },
+  // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Marina Aisa | Product Designer & Front-end Developer',
+    htmlAttrs: {
+      lang: 'en-GB',
+      class: 'bg-black',
+    },
+    title: 'Nuxt Basic Blog',
     meta: [
+      ...meta,
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' },
-      { name: 'msapplication-TileColor', content: '#ffffff' },
-      { name: 'msapplication-TileImage', content: '/favicons/mstile-144x144.png' },
-      { name: 'theme-color', content: '#c1c1c1' },
-      { name: 'robots', content: 'index, follow' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: global.siteDesc || '',
+      },
+      { property: 'og:site_name', content: global.siteName || '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: global.siteDesc || '',
+      },
+      { property: 'og:image:width', content: '740' },
+      { property: 'og:image:height', content: '300' },
+      { name: 'twitter:site', content: global.siteName || '' },
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:site', content: '@marinaaisa' },
-      { property: 'og:type', content: 'profile' },
-      { property: 'og:updated_time', content: builtAt }
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: '/favicons/favicon-16x16.png', sizes: '16x16' },
-      { rel: 'icon', type: 'image/png', href: '/favicons/favicon-32x32.png', sizes: '32x32' },
-      { rel: 'icon', type: 'image/png', href: '/favicons/android-chrome-96x96.png', sizes: '96x96' },
-      { rel: 'icon', type: 'image/png', href: '/favicons/android-chrome-192x192.png', sizes: '192x192' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-57x57.png', sizes: '57x57' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-60x60.png', sizes: '60x60' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-72x72.png', sizes: '72x72' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-76x76.png', sizes: '76x76' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-114x114.png', sizes: '114x114' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-120x120.png', sizes: '120x120' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-144x144.png', sizes: '144x144' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-152x152.png', sizes: '152x152' },
-      { rel: 'apple-touch-icon', href: '/favicons/apple-touch-icon-180x180.png', sizes: '180x180' },
-      { rel: 'mask-icon', type: 'image/png', href: '/favicons/safari-pinned-tab.svg', color: '#c1c1c1' }
-    ]
-  },
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: {
-    color: '#5a46ff',
-    height: '3px'
-  },
-  /*
-  ** Build configuration
-  */
-  css: [
-    'normalize.css/normalize.css',
-    '@/assets/css/main.scss',
-    '@/assets/css/prism-material-light.css'
-  ],
-
-  build: {
-    extend (config) {
-      const rule = config.module.rules.find(r => r.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/i')
-      config.module.rules.splice(config.module.rules.indexOf(rule), 1)
-
-      config.module.rules.push({
-        test: /\.md$/,
-        loader: 'frontmatter-markdown-loader',
-        include: path.resolve(__dirname, 'contents'),
-        options: {
-          mode: [Mode.VUE_RENDER_FUNCTIONS, Mode.VUE_COMPONENT],
-          vue: {
-            root: "dynamicMarkdown"
-          },
-          markdown(body) {
-            return md.render(body)
-          }
-        }
-      }, {
-        test: /\.(jpe?g|png)$/i,
-        loader: 'responsive-loader',
-        options: {
-          placeholder: true,
-          quality: 60,
-          size: 1400,
-          adapter: require('responsive-loader/sharp')
-        }
-      }, {
-        test: /\.(gif|svg)$/,
-        loader: 'url-loader',
-        query: {
-          limit: 1000,
-          name: 'img/[name].[hash:7].[ext]'
-        }
-      });
-    }
-  },
-  plugins: ['~/plugins/lazyload', '~/plugins/globalComponents', { src: '~plugins/ga.js', ssr: false }],
-  modules: [  
-    '@nuxtjs/style-resources',
-    ['nuxt-i18n', I18N],
-    'nuxt-webfontloader'
-  ],
-
-  styleResources: {
-    scss: [
-      '@/assets/css/utilities/_variables.scss',
-      '@/assets/css/utilities/_helpers.scss',
-      '@/assets/css/base/_grid.scss',
-      '@/assets/css/base/_buttons.scss'
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        hid: 'canonical',
+        rel: 'canonical',
+        href: global.siteUrl,
+      },
     ],
   },
 
-  webfontloader: {
-    custom: {
-      families: ['Graphik', 'Tiempos Headline'],
-      urls: ['/fonts/fonts.css']
-    }
+  // Global CSS (https://go.nuxtjs.dev/config-css)
+  css: ['~/assets/css/main.css'],
+
+  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
+  plugins: [],
+
+  // Auto import components (https://go.nuxtjs.dev/config-components)
+  components: true,
+
+  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
+  buildModules: [
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
+    // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/tailwindcss',
+  ],
+
+  // Modules (https://go.nuxtjs.dev/config-modules)
+  modules: [
+    // https://go.nuxtjs.dev/content
+    '@nuxt/content',
+    '@nuxtjs/feed',
+    '@nuxtjs/sitemap',
+  ],
+
+  // Content module configuration (https://go.nuxtjs.dev/content-config)
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-material-oceanic.css',
+      },
+    },
   },
 
-  generate: {
-    routes: [
-      '/es', '404'
-    ]
-    .concat(getPaths('es', 'blog'))
-    .concat(getPaths('en', 'blog'))
-  }
-}
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
+  build: {},
+
+  // Sitemap Configuration (https://github.com/nuxt-community/sitemap-module)
+  sitemap: {
+    hostname: global.siteUrl,
+    routes() {
+      return getRoutes();
+    },
+  },
+
+  // RSS Feed Configuration (https://github.com/nuxt-community/feed-module)
+  feed() {
+    const baseUrlArticles = `${global.siteUrl}/articles`;
+    const baseLinkFeedArticles = '/articles';
+    const feedFormats = {
+      rss: { type: 'rss2', file: 'rss.xml' },
+      json: { type: 'json1', file: 'feed.json' },
+    };
+    const { $content } = require('@nuxt/content');
+
+    const createFeedArticles = async function (feed) {
+      feed.options = {
+        title: global.siteName || '',
+        description: global.siteDesc || '',
+        link: baseUrlArticles,
+      };
+      const articles = await $content('articles').fetch();
+
+      articles.forEach((article) => {
+        const url = `${baseUrlArticles}/${article.slug}`;
+
+        feed.addItem({
+          title: article.title,
+          id: url,
+          link: url,
+          date: new Date(article.published),
+          description: article.description,
+          content: article.description,
+          author: global.twitterHandle,
+        });
+      });
+    };
+
+    return Object.values(feedFormats).map(({ file, type }) => ({
+      path: `${baseLinkFeedArticles}/${file}`,
+      type,
+      create: createFeedArticles,
+    }));
+  },
+
+  publicRuntimeConfig: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+  },
+};
