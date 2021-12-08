@@ -1,8 +1,8 @@
 <template>
   <div>
     <Header />
-    <main class="bg-gray-100 pt-5">
-      <div class="container mx-auto p-4">
+    <main>
+      <div>
         <Nuxt />
       </div>
     </main>

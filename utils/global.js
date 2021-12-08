@@ -5,11 +5,11 @@
 */
 export default {
   siteUrl: 'https://example.com',
-  siteName: 'Starter Blog',
-  author: 'Joe Blogs',
-  twitterHandle: '@joeblogs',
-  twitterURL: 'https://twitter.com/garethredfern',
-  githubURL: 'https://github.com/garethredfern',
+  siteName: 'Nebula Core Technologies Blog',
+  author: 'Team Blogs',
+  twitterHandle: '@nebulacore.tech',
+  twitterURL: 'https://twitter.com/@nebulacore.tech',
+  githubURL: 'https://github.com/@nebulacore.tech',
   siteTitle: 'Add Your Main Site Title Here',
   siteDesc:
     'A description for your site here, this will show on the home page.',

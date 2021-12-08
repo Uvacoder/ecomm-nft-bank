@@ -14,7 +14,7 @@ export default {
       lang: 'en-GB',
       class: 'bg-black',
     },
-    title: 'Nuxt Basic Blog',
+    title: 'Nebula Core Technologies Blog',
     meta: [
       ...meta,
       { charset: 'utf-8' },
