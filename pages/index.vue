@@ -74,7 +74,7 @@
     <div class="faq-section">
       <h2 class="faq-title">Frequently Asked Questions</h2>
       <div class="question">
-        <button class="collapsible">Are your services free?</button>
+        <button class="collapsible" @click="toggle">Are your services free?</button>
         <div class="content">
           <p>
             We have a free tier for all our services but they are not completely
@@ -84,7 +84,7 @@
         </div>
       </div>
       <div class="question">
-        <button class="collapsible">
+        <button class="collapsible"  @click="toggle">
           Do I need to create an account to use these services?
         </button>
         <div class="content">
@@ -99,7 +99,7 @@
         </div>
       </div>
       <div class="question">
-        <button class="collapsible">
+        <button class="collapsible"  @click="toggle">
           What are the supported payment methods?
         </button>
         <div class="content">
@@ -107,7 +107,7 @@
         </div>
       </div>
       <div class="question">
-        <button class="collapsible">
+        <button class="collapsible"  @click="toggle">
           Do I have copyright and commerical license to the images and smart
           contracts
         </button>
@@ -291,7 +291,7 @@
   margin: 2em; 
 }
 
-.collapsible { 
+.question .collapsible { 
   color: black;
   cursor: pointer;
   padding: 18px;
@@ -305,7 +305,7 @@
   box-shadow: 0 4px 10px 4px rgb(0 0 0 / 10%);
 }
 
-.active, .collapsible:hover {
+.question .active, .collapsible:hover {
    box-shadow: 0 4px 10px 4px rgb(0 0 0 / 15%);
 }
 
@@ -322,12 +322,34 @@
 }
 
 .content {
-  padding: 0 18px;
-  max-height: 0;
+  display: none;
+  padding: 0 18px; 
+  margin-top: 1.5em;
+  margin-left: 2em;
+  padding: 1em;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
+  transition: max-height 0.6s ease-out;
+  background-color: #fff; 
 }
+
+ 
 </style>
 
-<script></script>
+<script>
+export default {
+  methods: {
+    toggle(e) {
+      let faq = e.target;
+      document.querySelectorAll('.question .collapsible').forEach(el => { 
+        //remove styling from all elements
+        el.classList.remove('active');
+        el.nextElementSibling.style.display = "none";
+        //update collapsible styling for element clicked
+        faq.classList.add('active');
+        faq.nextElementSibling.style.display = "block"; 
+      });
+    }
+  }
+}
+
+</script>
