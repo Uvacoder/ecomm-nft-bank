@@ -70,6 +70,12 @@
         </div>
       </div>
     </div>
+    <!-- Road Map Section -->
+    <div class="road-map-section">
+      <div class="img-container">
+        <img src="https://uploads-ssl.webflow.com/616d17f88acab6507439a0d2/616eac8169cde240ec58f6b0_roadmap.png" alt="">
+      </div>
+    </div>
     <!-- FAQ Section -->
     <div class="faq-section">
       <h2 class="faq-title">Frequently Asked Questions</h2>
@@ -330,6 +336,14 @@
   overflow: hidden;
   transition: max-height 0.6s ease-out;
   background-color: #fff; 
+}
+
+.road-map-section {
+  background-color: #fff;
+}
+
+.road-map-section .img-container {
+  padding: 1.5em 4.5em;
 }
 
  
