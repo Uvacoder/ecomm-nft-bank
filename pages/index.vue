@@ -70,7 +70,33 @@
         </div>
       </div>
     </div>
-    <h1>Heloo</h1>
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <div class="question">
+         <button class="collapsible">Are your services free?</button>
+        <div class="content">
+          <p>We have a free tier for all our services but they are not completely free if you want access to custom features because of the cost in resources that we need to incur to provide these services.</p>
+        </div>
+      </div>
+      <div class="question">
+         <button class="collapsible">Do I need to create an account to use these services?</button>
+        <div class="content">
+          <p>There is no need to create an account. Your project data is auto saved locally in your machine so if you leave the page and come back again, you can find all your projects including the ones in progress right where you left off. We'll only need your email address when paying so we can send you your receipt, a link to your generated files, or other useful information</p>
+        </div>
+      </div>
+      <div class="question">
+         <button class="collapsible">What are the supported payment methods?</button>
+        <div class="content">
+          <p>We will only support crypto payments in the future.</p>
+        </div>
+      </div>
+      <div class="question">
+         <button class="collapsible">Do I have copyright and commerical license to the images and smart contracts</button>
+        <div class="content">
+          <p>Yes, of course! They are your materials after all. Whether you use the free tier or paid tier, whatever you generate in our studio belongs to you and you have copyright and commercial license to them.</p>
+        </div>
+      </div> 
+    </div>
   </div>
 </template>
 <style scoped>
