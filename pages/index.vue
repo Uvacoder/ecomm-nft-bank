@@ -33,8 +33,8 @@
             <div class="card-icon">
               <img
                 src="https://uploads-ssl.webflow.com/616d17f88acab6507439a0d2/616e8c8b84fc4ff489dc7e23_arts.svg"
-                loading="lazy" 
-                alt="Arts Icon" 
+                loading="lazy"
+                alt="Arts Icon"
               />
             </div>
             <div class="card-info">
@@ -53,8 +53,8 @@
             <div class="card-icon">
               <img
                 src="https://uploads-ssl.webflow.com/616d17f88acab6507439a0d2/616e8f26b295545266c00db4_contract.svg"
-                loading="lazy" 
-                alt="Smart Contract Icon" 
+                loading="lazy"
+                alt="Smart Contract Icon"
               />
             </div>
             <div class="card-info">
@@ -72,30 +72,54 @@
     </div>
     <!-- FAQ Section -->
     <div class="faq-section">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
       <div class="question">
-         <button class="collapsible">Are your services free?</button>
+        <button class="collapsible">Are your services free?</button>
         <div class="content">
-          <p>We have a free tier for all our services but they are not completely free if you want access to custom features because of the cost in resources that we need to incur to provide these services.</p>
+          <p>
+            We have a free tier for all our services but they are not completely
+            free if you want access to custom features because of the cost in
+            resources that we need to incur to provide these services.
+          </p>
         </div>
       </div>
       <div class="question">
-         <button class="collapsible">Do I need to create an account to use these services?</button>
+        <button class="collapsible">
+          Do I need to create an account to use these services?
+        </button>
         <div class="content">
-          <p>There is no need to create an account. Your project data is auto saved locally in your machine so if you leave the page and come back again, you can find all your projects including the ones in progress right where you left off. We'll only need your email address when paying so we can send you your receipt, a link to your generated files, or other useful information</p>
+          <p>
+            There is no need to create an account. Your project data is auto
+            saved locally in your machine so if you leave the page and come back
+            again, you can find all your projects including the ones in progress
+            right where you left off. We'll only need your email address when
+            paying so we can send you your receipt, a link to your generated
+            files, or other useful information
+          </p>
         </div>
       </div>
       <div class="question">
-         <button class="collapsible">What are the supported payment methods?</button>
+        <button class="collapsible">
+          What are the supported payment methods?
+        </button>
         <div class="content">
           <p>We will only support crypto payments in the future.</p>
         </div>
       </div>
       <div class="question">
-         <button class="collapsible">Do I have copyright and commerical license to the images and smart contracts</button>
+        <button class="collapsible">
+          Do I have copyright and commerical license to the images and smart
+          contracts
+        </button>
         <div class="content">
-          <p>Yes, of course! They are your materials after all. Whether you use the free tier or paid tier, whatever you generate in our studio belongs to you and you have copyright and commercial license to them.</p>
+          <p>
+            Yes, of course! They are your materials after all. Whether you use
+            the free tier or paid tier, whatever you generate in our studio
+            belongs to you and you have copyright and commercial license to
+            them.
+          </p>
         </div>
-      </div> 
+      </div>
     </div>
   </div>
 </template>
@@ -185,24 +209,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 3em;
   background-color: #f5fbff;
   height: 540px;
 }
 
-.section-header-title {
+.section-header-title,
+.faq-title {
   font-size: 30px;
   line-height: 46px;
-  font-weight: 700; 
-  text-align: center; 
+  font-weight: 700;
+  text-align: center;
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2em;
-  padding: 1.5em 4.5em; 
+  padding: 1.5em 4.5em;
 }
 
 .card {
@@ -213,23 +238,20 @@
   box-shadow: 0 4px 10px 0 rgb(0 0 0 / 10%);
 }
 
-.card-content { 
+.card-content {
   display: grid;
-  grid-template-columns: auto auto; 
-  gap: 3.5em;  
+  grid-template-columns: auto auto;
+  gap: 3.5em;
 }
 
-
-.card .card-content .card-icon { 
-  background-color: #00b2fe; 
+.card .card-content .card-icon {
+  background-color: #00b2fe;
   height: 80px;
   width: 80px;
-  align-items: center;  
+  align-items: center;
   margin-top: 6px;
-  border-radius: 16px;  
+  border-radius: 16px;
 }
-
- 
 
 .card-icon img {
   width: 100%;
@@ -238,7 +260,7 @@
 }
 
 .card-title {
-  font-family: 'Titillium Web',sans-serif;
+  font-family: "Titillium Web", sans-serif;
   font-size: 24px;
   font-weight: 700;
   white-space: 0;
@@ -247,7 +269,7 @@
 
 .card-description {
   margin-top: 10px;
-  font-family: 'Titillium Web',sans-serif;
+  font-family: "Titillium Web", sans-serif;
   font-size: 17px;
   line-height: 27.382px;
   text-align: left;
@@ -256,6 +278,55 @@
 .italic-bold {
   font-style: italic;
   font-weight: 700;
+}
+
+.faq-section {
+  height: auto;
+  min-height: 700px;
+  background-color: #f5fbff;
+}
+
+.question {
+  display: block; 
+  margin: 2em; 
+}
+
+.collapsible { 
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px; 
+  border-radius: 12px;
+  background-color: #fff; 
+  box-shadow: 0 4px 10px 4px rgb(0 0 0 / 10%);
+}
+
+.active, .collapsible:hover {
+   box-shadow: 0 4px 10px 4px rgb(0 0 0 / 15%);
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: #555;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
 }
 </style>
 
