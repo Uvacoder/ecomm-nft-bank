@@ -71,59 +71,68 @@
       </div>
     </div>
     <!-- Road Map Section -->
-    <div class="road-map-section">
+    <div id="roadmap" class="road-map-section">
+       <h2 class="roadmap-title">Road Map</h2>
       <div class="img-container">
-        <img src="https://uploads-ssl.webflow.com/616d17f88acab6507439a0d2/616eac8169cde240ec58f6b0_roadmap.png" alt="">
+        <img
+          src="https://uploads-ssl.webflow.com/616d17f88acab6507439a0d2/616eac8169cde240ec58f6b0_roadmap.png"
+          alt=""
+        />
       </div>
     </div>
     <!-- FAQ Section -->
-    <div class="faq-section">
+    <div id="faq" class="faq-section">
       <h2 class="faq-title">Frequently Asked Questions</h2>
-      <div class="question">
-        <button class="collapsible" @click="toggle">Are your services free?</button>
-        <div class="content">
-          <p>
-            We have a free tier for all our services but they are not completely
-            free if you want access to custom features because of the cost in
-            resources that we need to incur to provide these services.
-          </p>
+      <div class="faqs">
+        <div class="question">
+          <button class="collapsible" @click="toggle">
+            Are your services free?
+          </button>
+          <div class="content">
+            <p>
+              We have a free tier for all our services but they are not
+              completely free if you want access to custom features because of
+              the cost in resources that we need to incur to provide these
+              services.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="question">
-        <button class="collapsible"  @click="toggle">
-          Do I need to create an account to use these services?
-        </button>
-        <div class="content">
-          <p>
-            There is no need to create an account. Your project data is auto
-            saved locally in your machine so if you leave the page and come back
-            again, you can find all your projects including the ones in progress
-            right where you left off. We'll only need your email address when
-            paying so we can send you your receipt, a link to your generated
-            files, or other useful information
-          </p>
+        <div class="question">
+          <button class="collapsible" @click="toggle">
+            Do I need to create an account to use these services?
+          </button>
+          <div class="content">
+            <p>
+              There is no need to create an account. Your project data is auto
+              saved locally in your machine so if you leave the page and come
+              back again, you can find all your projects including the ones in
+              progress right where you left off. We'll only need your email
+              address when paying so we can send you your receipt, a link to
+              your generated files, or other useful information
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="question">
-        <button class="collapsible"  @click="toggle">
-          What are the supported payment methods?
-        </button>
-        <div class="content">
-          <p>We will only support crypto payments in the future.</p>
+        <div class="question">
+          <button class="collapsible" @click="toggle">
+            What are the supported payment methods?
+          </button>
+          <div class="content">
+            <p>We will only support crypto payments in the future.</p>
+          </div>
         </div>
-      </div>
-      <div class="question">
-        <button class="collapsible"  @click="toggle">
-          Do I have copyright and commerical license to the images and smart
-          contracts
-        </button>
-        <div class="content">
-          <p>
-            Yes, of course! They are your materials after all. Whether you use
-            the free tier or paid tier, whatever you generate in our studio
-            belongs to you and you have copyright and commercial license to
-            them.
-          </p>
+        <div class="question">
+          <button class="collapsible" @click="toggle">
+            Do I have copyright and commerical license to the images and smart
+            contracts
+          </button>
+          <div class="content">
+            <p>
+              Yes, of course! They are your materials after all. Whether you use
+              the free tier or paid tier, whatever you generate in our studio
+              belongs to you and you have copyright and commercial license to
+              them.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -222,7 +231,7 @@
 }
 
 .section-header-title,
-.faq-title {
+.faq-title, .roadmap-title {
   font-size: 30px;
   line-height: 46px;
   font-weight: 700;
@@ -286,18 +295,27 @@
   font-weight: 700;
 }
 
-.faq-section {
+.faq-section { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   height: auto;
   min-height: 700px;
   background-color: #f5fbff;
 }
 
+.faqs { 
+  width: 100%;
+  padding: 1.5em 4.5em;
+}
+
 .question {
-  display: block; 
+  display: block;
   margin: 2em; 
 }
 
-.question .collapsible { 
+.question .collapsible {
   color: black;
   cursor: pointer;
   padding: 18px;
@@ -305,18 +323,19 @@
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px; 
+  font-size: 15px;
   border-radius: 12px;
-  background-color: #fff; 
+  background-color: #fff;
   box-shadow: 0 4px 10px 4px rgb(0 0 0 / 10%);
 }
 
-.question .active, .collapsible:hover {
-   box-shadow: 0 4px 10px 4px rgb(0 0 0 / 15%);
+.question .active,
+.collapsible:hover {
+  box-shadow: 0 4px 10px 4px rgb(0 0 0 / 15%);
 }
 
 .collapsible:after {
-  content: '\002B';
+  content: "\002B";
   color: #555;
   font-weight: bold;
   float: right;
@@ -329,13 +348,13 @@
 
 .content {
   display: none;
-  padding: 0 18px; 
+  padding: 0 18px;
   margin-top: 1.5em;
   margin-left: 2em;
   padding: 1em;
   overflow: hidden;
   transition: max-height 0.6s ease-out;
-  background-color: #fff; 
+  background-color: #fff;
 }
 
 .road-map-section {
@@ -346,7 +365,9 @@
   padding: 1.5em 4.5em;
 }
 
- 
+.roadmap-title {
+  padding-top: 2em;
+}
 </style>
 
 <script>
@@ -354,16 +375,15 @@ export default {
   methods: {
     toggle(e) {
       let faq = e.target;
-      document.querySelectorAll('.question .collapsible').forEach(el => { 
+      document.querySelectorAll('.question .collapsible').forEach(el => {
         //remove styling from all elements
         el.classList.remove('active');
         el.nextElementSibling.style.display = "none";
         //update collapsible styling for element clicked
         faq.classList.add('active');
-        faq.nextElementSibling.style.display = "block"; 
+        faq.nextElementSibling.style.display = "block";
       });
     }
   }
 }
-
 </script>
