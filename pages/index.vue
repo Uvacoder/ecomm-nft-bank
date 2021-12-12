@@ -24,6 +24,10 @@
         >Open App</a
       >
     </div>
+    <!-- Video Section -->
+    <div class="video-section">  
+      <iframe src="https://www.youtube-nocookie.com/embed/TNK-yRJ4-PI?rel=0&amp;controls=1&amp;autoplay=0&amp;mute=1&amp;start=0" frameBorder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+    </div>
     <!-- Services Section -->
     <div id="our-services" class="our-service-section">
       <h2 class="section-header-title">Our Services</h2>
@@ -368,6 +372,19 @@
 .roadmap-title {
   padding-top: 2em;
 }
+
+.video-section {
+  position: relative;
+  max-width: 90%; 
+  height: 90vh; 
+  position: relative;
+  padding: 0;
+  margin: auto;
+  background-image: url(https://d3e54v103j8qbb.cloudfront.net/static/youtube-placeholder.2b05e7d68d.svg);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
 </style>
 
 <script>
