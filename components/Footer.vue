@@ -143,6 +143,34 @@ footer {
 .footer-link-highlight {
   color: #bcabfe;
 }
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    padding: 2em;
+  }
+  .footer-flex-container { 
+    flex-direction: column; 
+    align-items: left;
+  }
+
+  .footer-heading {
+    margin-bottom: 20px; 
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .footer-link {
+    display: block;
+    margin-bottom: 10px; 
+    font-size: 13px;
+  }
+
+  .copyright-text {
+    padding: 2em 0;
+    font-weight: 300;
+}
+}
 </style>
 
 <script> 

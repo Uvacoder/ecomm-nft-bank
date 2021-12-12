@@ -190,7 +190,7 @@
 }
 
 .intro-section .title {
-  font-size: 30px;
+  font-size: clamp(10px, 5vw, 30px);
   line-height: 46px;
   text-align: center;
 }
@@ -388,6 +388,10 @@
 @media only screen and (max-width: 600px) {
   .main-hero-container {
     top: 40%;
+  }
+
+  .faqs {
+    padding: 0;
   }
 }
 
