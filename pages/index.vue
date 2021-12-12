@@ -393,6 +393,39 @@
   .faqs {
     padding: 0;
   }
+
+  .our-service-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3em;
+    background-color: #f5fbff;
+    height: auto;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+    padding: 1.5em 4.5em;
+  }
+
+  .card {
+     height: 340px; 
+     width: 90vw;
+  }
+
+  .card-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 1em;
+  }
+
+  .card-title {
+    font-size: 20px;
+  }
 }
 
 </style>

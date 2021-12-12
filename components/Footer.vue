@@ -169,7 +169,7 @@ footer {
   .copyright-text {
     padding: 2em 0;
     font-weight: 300;
-}
+  }
 }
 </style>
 
