@@ -14,7 +14,7 @@ export default {
       lang: 'en-GB',
       class: 'bg-black',
     },
-    title: 'Nebula Core Technologies Blog',
+    title: 'Nebula Core Technologies',
     meta: [
       ...meta,
       { charset: 'utf-8' },
@@ -33,7 +33,7 @@ export default {
       { property: 'og:image:width', content: '740' },
       { property: 'og:image:height', content: '300' },
       { name: 'twitter:site', content: global.siteName || '' },
-      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:card', content: 'https://uploads-ssl.webflow.com/616d17f88acab6507439a0d2/6173d9ac2ea50e62cf676dba_logo.png' },
     ],
     link: [
       { rel: 'icon', type: 'image/png', href: '/favicon.png' },
