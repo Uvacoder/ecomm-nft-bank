@@ -263,6 +263,10 @@
   gap: 3.5em;
 }
 
+.services-grid .card:first-child .card-content .card-icon {
+  background-color: #7701a7;
+}
+
 .card .card-content .card-icon {
   background-color: #00b2fe;
   height: 80px;
