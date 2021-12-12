@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mt-5">
     <ul class="text-gray-500 max-w-5xl mx-auto">
       <li
         v-for="article of articles"

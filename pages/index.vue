@@ -169,7 +169,7 @@
 .hero-title {
   font-family: "Titillium Web", sans-serif;
   color: #fff;
-  font-size: 72px;
+  font-size: clamp(30px, 5vw, 72px);
   line-height: 109.51px;
   text-shadow: 0 4px 10px rgb(0 0 0 / 10%);
 }
@@ -178,7 +178,7 @@
   position: relative;
   font-family: "Titillium Web", sans-serif;
   color: #fff;
-  font-size: 48px;
+  font-size: clamp(20px, 5vw, 48px); 
   line-height: 51px;
   font-weight: 400;
 }
@@ -383,6 +383,12 @@
   background-image: url(https://d3e54v103j8qbb.cloudfront.net/static/youtube-placeholder.2b05e7d68d.svg);
   background-size: cover;
   background-position: 50% 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-hero-container {
+    top: 40%;
+  }
 }
 
 </style>

@@ -1,15 +1,15 @@
 <template>
-  <nav id="main-nav">
-    <div class="w-col w-col-8">
-      <div class="logo-container">
+  <nav id="main-nav"> 
+    <div class="logo-container">
+      <a href="/">
         <img
-          src="https://uploads-ssl.webflow.com/616d17f88acab6507439a0d2/6173d9ac2ea50e62cf676dba_logo.png"
-          loading="lazy"
-          height="81"
-          alt="NFT+ Studio Logo"
-        />
-      </div>
-    </div>
+        src="https://uploads-ssl.webflow.com/616d17f88acab6507439a0d2/6173d9ac2ea50e62cf676dba_logo.png"
+        loading="lazy"
+        height="81"
+        alt="NFT+ Studio Logo"
+      />
+      </a>
+    </div> 
     <div class="nav-container">
       <ul role="list" class="nav-list">
         <li class="main-menu-item">
@@ -168,6 +168,22 @@
 #main-nav .nav-list li:hover {
   color: #ff00a1;
   transition: color 0.6s;
+}
+
+@media only screen and (max-width: 600px) {
+  #main-nav {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  #main-nav .nav-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em; 
+    place-items: center;
+    top: -120px;
+  }
 }
 </style>
 <script>
