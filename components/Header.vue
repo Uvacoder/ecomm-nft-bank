@@ -13,13 +13,13 @@
     <div class="nav-container">
       <ul role="list" class="nav-list">
         <li class="main-menu-item">
-          <a href="#our-services" class="main-menu-item-link">Services</a>
+          <a href="#our-services" >Services</a>
         </li>
         <li class="main-menu-item">
-          <a href="#roadmap" class="main-menu-item-link">Roadmap</a>
+          <a href="#roadmap">Roadmap</a>
         </li>
         <li class="main-menu-item">
-          <a href="#faq" class="main-menu-item-link">FAQ</a>
+          <a href="#faq">FAQ</a>
         </li>
       </ul>
       <div class="div-block">
@@ -128,7 +128,7 @@
 #main-nav .primary-btn {
   display: block;
   width: max-content;
-  height: 50px;
+  height: min-content;
   padding: 0.6em 1.4em;
   border-radius: 7px;
   color: aliceblue;
@@ -159,6 +159,7 @@
   margin: auto 0;
   font-weight: bolder;
   transition: all 1s;
+  font-family: "Titillium Web", sans-serif;
 }
 #main-nav .nav-list li {
   color: #bcabfe;
@@ -174,6 +175,11 @@
   #main-nav {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+
+  #main-nav .logo-container {
+    display: flex;
+    justify-content: center;
   }
 
   #main-nav .nav-container {

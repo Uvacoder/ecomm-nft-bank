@@ -5,7 +5,7 @@
 */
 export default {
   siteUrl: 'https://example.com',
-  siteName: 'Nebula Core Technologies Blog',
+  siteName: 'NFT + Studio',
   author: 'Team Blogs',
   twitterHandle: '@nebulacore.tech',
   twitterURL: 'https://twitter.com/@nebulacore.tech',

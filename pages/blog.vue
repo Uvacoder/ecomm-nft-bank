@@ -1,17 +1,16 @@
-<template>   
-    <ArticleList :articles="paginatedArticles" :total="allArticles.length" />  
+<template>    
+    <ArticleList :articles="paginatedArticles" :total="allArticles.length" />   
 </template>
 
 <script>
 import getContent from '@/utils/getContent';
-import ArticleList from '@/components/ArticleList'; 
-import PageLayout from '@/layouts/PageLayout';
+import ArticleList from '@/components/ArticleList';  
 
 export default {
   name: 'HomePage',
+  layout: 'PageLayout',
   components: {
-    ArticleList,
-    PageLayout
+    ArticleList 
   },
   async asyncData({ $content, app, params, error }) {
     const content = await getContent($content, params, error);

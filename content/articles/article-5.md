@@ -4,6 +4,7 @@ description: 'Empower your NuxtJS application with @nuxt/content module: write i
 image: 'https://res.cloudinary.com/redfern-web/image/upload/v1599840408/redfern-dev/png/nuxt.png'
 tags: ['VueJS', 'Nuxt']
 published: '2020-09-05'
+author: 'Nebulacore Team'
 ---
 
 ## Getting started

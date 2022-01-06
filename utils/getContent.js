@@ -26,7 +26,7 @@ export default async ($content, params, error) => {
   };
 
   const paginatedArticles = await $content('articles')
-    .only(['title', 'description', 'image', 'slug', 'published'])
+    .only(['title', 'description', 'image', 'slug', 'published', 'author', 'tags'])
     .sortBy('published', 'desc')
     .limit(perPage)
     .skip(skipNumber())

@@ -1,7 +1,19 @@
- body {
+@import url('https://fonts.googleapis.com/css?family=Titillium Web');
+body {
    background-color: whitesmoke;
+   margin: 0;
+   padding: 0;
+   font-family: 'Titillium Web';
  }
 
+ a {
+   text-decoration: none;
+   color: inherit;
+ }
+
+ ul {
+   list-style-type: none;
+ }
  main {
-  /* padding: 1.5em 4.5em; */
+  /* padding: 1.5em 4.5em; */ 
  }

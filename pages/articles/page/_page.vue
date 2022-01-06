@@ -14,9 +14,11 @@
 <script>
 import getContent from '@/utils/getContent';
 import ArticleList from '@/components/ArticleList';
+import PageLayout from '@/layouts/PageLayout';
 
 export default {
   name: 'ArticleListPage',
+  layout: 'PageLayout',
   components: {
     ArticleList,
   },

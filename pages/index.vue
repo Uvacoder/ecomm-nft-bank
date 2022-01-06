@@ -187,16 +187,18 @@
   padding-top: 3em;
   padding-bottom: 3em;
   text-align: center;
+  width: 90%;
+  margin: auto;
 }
 
 .intro-section .title {
   font-size: clamp(10px, 5vw, 30px);
   line-height: 46px;
   text-align: center;
+  font-family: "Titillium Web", sans-serif;
 }
 
-.intro-section .description {
-  margin-bottom: 2em;
+.intro-section .description { 
   font-family: "Titillium Web", sans-serif;
   color: rgba(0, 0, 0, 0.45);
   font-size: 24px;
@@ -206,8 +208,9 @@
 
 .primary-btn {
   display: block;
-  padding: 0.8em 1.5em;
+  padding: 1em 2.5em; 
   border-radius: 7px;
+  color: #fff;
   background-image: -webkit-gradient(
     linear,
     left top,
@@ -217,7 +220,7 @@
   );
   background-image: linear-gradient(180deg, #ff00a1, #ff114f 84%);
   font-family: "Titillium Web", sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   width: max-content;
   height: max-content;
@@ -232,6 +235,16 @@
   gap: 3em;
   background-color: #f5fbff;
   height: 540px;
+  margin: 0; 
+}
+
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  padding: 1.5em 4.5em;
+  margin: 0;  
 }
 
 .section-header-title,
@@ -240,13 +253,6 @@
   line-height: 46px;
   font-weight: 700;
   text-align: center;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2em;
-  padding: 1.5em 4.5em;
 }
 
 .card {
@@ -309,13 +315,14 @@
   justify-content: center;
   flex-direction: column;
   height: auto;
+  min-width: 100%;
   min-height: 700px;
   background-color: #f5fbff;
 }
 
-.faqs { 
-  width: 100%;
+.faqs {  
   padding: 1.5em 4.5em;
+  min-width: 90%;
 }
 
 .question {
@@ -366,11 +373,17 @@
 }
 
 .road-map-section {
-  background-color: #fff;
+  background-color: #fff;  
+  overflow: hidden;
 }
 
 .road-map-section .img-container {
-  padding: 1.5em 4.5em;
+  padding: 1.5em 4.5em;  
+}
+
+.road-map-section .img-container img { 
+  height: 100%;
+  width: 100%;
 }
 
 .roadmap-title {
@@ -383,8 +396,8 @@
   height: 90vh; 
   position: relative;
   padding: 0;
-  margin: auto;
-  background-image: url(https://d3e54v103j8qbb.cloudfront.net/static/youtube-placeholder.2b05e7d68d.svg);
+  margin: 2em auto;
+  background-image: url('https://d3e54v103j8qbb.cloudfront.net/static/youtube-placeholder.2b05e7d68d.svg');
   background-size: cover;
   background-position: 50% 50%;
 }
@@ -394,6 +407,10 @@
     top: 40%;
   }
 
+  .intro-section, .description {
+    width: 90%; 
+    margin: auto;
+  }
   .faqs {
     padding: 0;
   }
@@ -417,7 +434,8 @@
 
   .card {
      height: 340px; 
-     width: 90vw;
+     width: 100%;
+     margin: 0;
   }
 
   .card-content {
@@ -429,6 +447,10 @@
 
   .card-title {
     font-size: 20px;
+  }
+
+  .road-map-section {
+    display: none;
   }
 }
 
