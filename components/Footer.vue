@@ -105,7 +105,7 @@ footer {
 }
 .footer-link {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 10px; 
   font-family: "Titillium Web", sans-serif;
   color: #bcabfe;
   font-size: 16px;
@@ -113,6 +113,10 @@ footer {
 }
 .footer-link:hover {
   text-decoration: underline;
+}
+.w-list-unstyled { 
+  text-align: left;
+  padding: 0;
 }
 .footer-logo {
   display: block;

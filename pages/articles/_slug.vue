@@ -1,41 +1,85 @@
 <template>
   <article>
-    <header class="text-white mx-auto text-xs">
-      <div class="p-5 bg-indigo-500 md:inline-block">
+    <header> 
         <p>
-          <span class="uppercase">Published:</span>
+          <span class="published">Published:</span>
           <span>{{ article.published }}</span>
-        </p>
-        <div class="flex">
-          <span class="mr-1 uppercase">Filed under:</span>
-          <ul class="flex">
-            <li v-for="tag in article.tags" :key="tag" class="mr-2">
-              <nuxt-link
-                :to="{ name: 'tags-tag', params: { tag: tag.toLowerCase() } }"
-                class="hover:underline"
-              >
-                {{ tag }}
-              </nuxt-link>
-            </li>
-          </ul>
-        </div>
-      </div>
+        </p> 
+        <ul class="tags"> 
+          <li v-for="tag in article.tags" :key="tag" class="tag">
+            <nuxt-link
+              :to="{ name: 'tags-tag', params: { tag: tag.toLowerCase() } }"
+              class="hover:underline"
+            >
+              {{ tag }}
+            </nuxt-link>
+          </li>
+        </ul>  
     </header>
-    <div class="prose prose-lg text-gray-500 bg-white p-5 rounded mx-auto">
+    <main class="content">
       <nuxt-content :document="article" />
+    </main> 
+    <div class="blog-prev">
+      <prev-next :prev="prev" :next="next" /> 
     </div>
-    <footer class="py-5 mt-5">
-      <prev-next :prev="prev" :next="next" />
-    </footer>
   </article>
 </template>
+<style scoped>
+ article {
+   margin: 0;
+   padding: 0;
+   width: 100vw;
+   height: 100%;
+   min-height: 100vh;
+   font-family: "Titillium Web", sans-serif;
+ }
 
+ .content, header,.blog-prev {
+   width: 60%;
+   margin: auto;
+ }
+
+ header p {
+   font-size: 2.3em;
+ }
+
+ header .published {
+   font-style: italic;
+ }
+
+ .blog-prev * {
+   display: flex;
+   gap: 3em;
+ }
+
+ .blog-prev a {
+   background: blanchedalmond;
+ }
+
+ .tags {
+   display: flex; 
+   padding: 0;
+   text-align: right;
+   gap: 1em;  
+ }
+
+ .tags .tag {
+   background: #C33764;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #1D2671, #C33764);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #1D2671, #C33764); 
+   color: wheat;
+   padding: 0.4em;
+   border-radius: 0.3em;
+   text-align: left;
+ }
+</style>
 <script>
 import global from '@/utils/global';
-import getSiteMeta from '@/utils/getSiteMeta';
+import getSiteMeta from '@/utils/getSiteMeta'; 
 
 export default {
   name: 'ArticlePage',
+  layout: 'PageLayout',
   async asyncData({ $content, params }) {
     const article = await $content('articles', params.slug).fetch();
 

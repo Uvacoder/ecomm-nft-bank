@@ -4,6 +4,7 @@ description: "This is the kitchen sink, all the common markdown elements laid ou
 image: 'https://res.cloudinary.com/redfern-web/image/upload/v1599840408/redfern-dev/png/nuxt.png'
 tags: ['VueJS', 'Nuxt']
 published: '2020-08-02'
+author: 'Nebulacore Team'
 ---
 
 # Heading Level 1

@@ -1,11 +1,10 @@
 <template>
   <div>
-    <div class="flex justify-center">
-      <h2
-        class="text-center text-3xl mb-4 uppercase bg-black text-white inline-block mx-auto px-2"
+    <div>
+      <h1
       >
         All Tags
-      </h2>
+      </h1>
     </div>
     <ul>
       <li v-for="tag in tags" :key="tag" class="text-center mb-2">
@@ -22,6 +21,7 @@
 <script>
 export default {
   name: 'TagListPage',
+  layout: 'PageLayout',
   async asyncData({ $content }) {
     function onlyUnique(value, index, self) {
       return self.indexOf(value) === index;
